@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume Maker</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Resume Maker</h1>
+    <form id="resumeForm">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" placeholder="Your Name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" placeholder="Your Email" required>
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone:</label>
+        <input type="text" id="phone" placeholder="Your Phone Number" required>
+      </div>
+      <div class="form-group">
+        <label for="linkedin">Your LinkedIn Account link</label>
+        <input type="text" id="linkedin" placeholder="enter url" required>
+      </div>
+      <div class="form-group">
+        <label for="career">Career Objective:</label>
+        <textarea id="career" placeholder="keep it short and attractive"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="education">Education:</label>
+        <textarea id="education" placeholder="e.g., B.Sc in Computer Science"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="skills">Skills:</label>
+        <textarea id="skills" placeholder="e.g., HTML, CSS, JavaScript"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="project">Projects:</label>
+        <textarea id="project" placeholder="e.g., include all projects"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="experience">Experience:</label>
+        <textarea id="experience" placeholder="e.g., Worked on a project..."></textarea>
+      </div>
+      <div class="form-group">
+        <label for="hobby">Hobbies:</label>
+        <textarea id="hobby" placeholder="e.g., hobby"></textarea>
+      </div>
+      
+      <button type="button" class="button" onclick="generateResume()">Generate Resume</button>
+      <button type="button" class="button" onclick="downloadResume()">Download as PDF</button>
+    </form>
+    <div id="resume">
+      <h2>Resume Preview</h2>
+      <div class="section" id="resumeName"></div>
+      <div class="section" id="resumeContact"></div>
+      <div class="section" id="resumeSkills"></div>
+      <div class="section" id="resumeExperience"></div>
+      <div class="section" id="resumeEducation"></div>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+  <script src="fun.js"></script>
+</body>
+</html>
