@@ -7,7 +7,7 @@ function generateResume() {
   const experience = document.getElementById('experience').value;
   const education = document.getElementById('education').value;
 
-  // Populate the resume preview
+  
   document.getElementById('resumeName').innerHTML = `<strong>Name:</strong> ${name}`;
   document.getElementById('resumeContact').innerHTML = `<strong>Contact:</strong> ${email} | ${phone}`;
   document.getElementById('resumeSkills').innerHTML = `<strong>Skills:</strong><br>${skills.replace(/\n/g, '<br>')}`;
@@ -21,7 +21,7 @@ function downloadResume() {
       Contact: [
           document.getElementById('phone').value.trim(),
           document.getElementById('email').value.trim(),
-      ].filter(Boolean).join(" | "), // Removes empty values and joins with " | " .filter(Boolean) is a shorthand way to remove all falsy values from an array
+      ].filter(Boolean).join(" | "), // Removes empty values and joins with " | " .filter(Boolean) used to remove all false values from an array
       Linkedin: document.getElementById('linkedin').value.trim(),
       CareerObjective: document.getElementById('career').value.trim(),
       Education: document.getElementById('education').value.trim(),
@@ -31,7 +31,7 @@ function downloadResume() {
       Hobbies: document.getElementById('hobby').value.trim()
   };
 
-  // Use jsPDF to generate a PDF
+  //jsPDF library to generate a PDF
   const { jsPDF } = window.jspdf;
   const pdf = new jsPDF();
 
@@ -46,11 +46,7 @@ function downloadResume() {
   pdf.setLineWidth(0.5);  //linebar
   pdf.line(10, 48, 200, 48);
 
-  // Title
-  // pdf.setTextColor(255, 255, 255); // White text
-  // pdf.setFont("Helvetica", "bold");
-  // pdf.setFontSize(20);
-  // pdf.text("Resume", 80, 10);
+  
 
   // Reset text color to black for content
   pdf.setTextColor(0, 0, 0);
